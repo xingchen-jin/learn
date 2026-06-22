@@ -37,3 +37,6 @@ Transition 除了Color
 先引入包
 using UnityEngine.UI;
 
+**ui的层级 跟hierarchy有关
+
+
