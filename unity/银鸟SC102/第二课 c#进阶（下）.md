@@ -68,3 +68,32 @@ public interface IDamageable {
 	void OnDamage(float value);//方法：受击
 }
 ```
+
+# 部分类
+部分类允许我们把同一个类写在多个文件里，每个文件提供类的一部分。 定义时使用partial关键字
+# lambda表达式
+### expresion lambda
+``(参数列表) => (返回的表达式)``比如`` (x,y) => x*y``
+使用lambda表达式时把它当作一个委托类型的变量即可，
+``Func mul = (x,y) => x*y``
+
+### statement lambda
+``(参数列表) => { 执行的程序语句 }``
+```
+Action greet = name => 
+{ 
+	string greeting = $"Hello {name}!";
+	 Console.WriteLine(greeting); 
+};
+greet("World");
+```
+
+# 隐式类型
+隐式类型允许我们在定义变量时不直接写出其类型。使用var关键字定义隐式类型变量
+### foreach循环
+类似for循环，foreach循环是一种遍历集合的方式。与隐式类型搭配时，foreach循环会变得很方便
+```csharp
+foreach(var item in list){ 
+	item += 5;
+}
+```
