@@ -29,6 +29,10 @@ int sum = cal(6, 7); //使用委托
 
 ### 事件event
 对委托的一层封装，仅支持+=和-=，禁止=直接赋值
+我们可以用event关键字修饰一个委托变量来将其变成事件变量。
+``public delegate void MyDelegate(string message);
+``public event MyDelegate MyEvent;
+
 
 ### Action和Func
 ![](assets/Pasted%20image%2020260628204934.png)
