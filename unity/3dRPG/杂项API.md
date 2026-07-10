@@ -13,3 +13,5 @@ Vector3.Dot 两个向量的点积
 Regidbody组件的is Kinematic勾选后可以避免与Nav Mesh Agent的一些冲突
 
 LateUpdate每一帧被渲染后执行
+
+dan
