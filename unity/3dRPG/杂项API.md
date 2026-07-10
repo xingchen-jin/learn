@@ -14,4 +14,4 @@ Regidbody组件的is Kinematic勾选后可以避免与Nav Mesh Agent的一些冲
 
 LateUpdate每一帧被渲染后执行
 
-dan
+放置预制体V键自动吸浮
