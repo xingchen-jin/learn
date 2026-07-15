@@ -23,6 +23,7 @@ AssetDatabase.LoadAssetAtPath(path, typeof(ItemDataList_SO)) as ItemDataList_SO;
 EditorUtility.SetDirty(dataBase);//必须标记才会保存数据
 
 #### List View模板
+```csharp
 func<VisualElement>makeItem，每次数据绘制到窗口时按数据的个数逐一增加一个项目的时候调用。
 Action<Element,int>bingItem，决定实际每一项显示的内容，e就是实际的Element
 
@@ -46,4 +47,7 @@ uxmlField.RegisterCallback<ChangeEvent<int>>((evt) =>
 {
     csharpField.value = evt.newValue;
 });
+```
+物品信息编辑功能
+``itemListView.selectionChanged += OnListSelectionChange;//注册选择事件
 
