@@ -49,5 +49,23 @@ uxmlField.RegisterCallback<ChangeEvent<int>>((evt) =>
 });
 ```
 物品信息编辑功能
-``itemListView.selectionChanged += OnListSelectionChange;//注册选择事件
+``itemListView.selectionChanged += OnListSelectionChange;//注册选择事件,事件中调用物品信息获取``
+```csharp 
+		/* 获取物品信息并注册回调 */
+        itemDetailsSection.MarkDirtyRepaint();//标记需要重绘
+
+        //ID
+
+        itemDetailsSection.Q<IntegerField>("ItemId").value = activeItem.itemID;
+
+        itemDetailsSection.Q<IntegerField>("ItemId").RegisterValueChangedCallback(evt =>
+
+        {
+
+            activeItem.itemID = evt.newValue;
+
+        });
+```
+
+``root.Q<Button>("AddItem").clicked += OnAddItemClicked;//按键事件
 
