@@ -1,0 +1,12 @@
+当需要在inspector中传入String之类时，发现手动输入太麻烦且容易出错。这时就需要写一些Attribute， 下拉菜单的方式选择
+Attribute命名规则：名称+Attribute.cs,继承PropertyAttribute
+同时需要一个Drawer来绘制，继承PropertyDrawer，[CustomPropertyDrawer(typeof(SceneNameAttribute))]针对哪一类型的PropertyAttribute
+这里的Property就是指在inspector中的参数
+
+
+### SceneNameDrawer
+继承PropertyDrawer
+创建变量int 变量sceneIndex
+以及GUICountp[] sceneNames
+在OnGUI中
+判断
