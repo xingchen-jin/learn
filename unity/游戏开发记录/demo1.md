@@ -28,3 +28,25 @@ ai给出的解决方案有：
 
 
 
+## 8月10号 
+- 重构FSM
+
+```Csharp
+csharp
+
+namespace Game.Player
+{
+    public class PlayerContext : MyFSM.Blackboard
+    {
+        public Animator animator;
+        public CharacterController controller;
+        public PlayerInputData input;   // 定义的输入结构体
+        // 两个状态机引用（方便互相查询）
+        public MovementFSM movementFSM;
+        public WeaponFSM weaponFSM;
+        // 可被WeaponFSM修改的速度上限
+        public float maxSpeed = 5f;
+        public bool canRun = true;
+    }
+}
+```
