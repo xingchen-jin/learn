@@ -460,3 +460,30 @@ for k,v in pairs(_G) do
 end
 --加了local的变量不会被放入_G表中
 ```
+
+## 特殊用法
+#### 多变量赋值
+值不够自动补空
+```lua
+a,b,c = 1,2  --1，2，nil
+```
+#### and和or
+不仅连接bool还可以连接任何  
+只有nil和false才认为是假
+```
+print(1 and 2)  --2
+print(0 and 2)  --2
+print(nil and 1) --nil
+print(false and 2) --false
+```
+#### 三目运算符
+
+```
+x = 1
+
+y = 2
+
+local z = x > y and x or y
+```
+
+ 
