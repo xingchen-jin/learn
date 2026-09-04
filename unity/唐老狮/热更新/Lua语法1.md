@@ -1,3 +1,4 @@
+
 #### 下标（索引）从1开始
 #### 注释
 ``--[[]]  多行注释  
@@ -487,3 +488,88 @@ local z = x > y and x or y
 ```
 
  
+## 协程
+协程本质是一个线程对象
+#### 协程创建
+```lua
+fun = function()
+	print(123)
+end
+--1
+co = coroutine.create(fun)
+print(type(co)) --thread
+
+--2
+co2 = coroutine.wrap(fun)
+print(type(co2))  --function
+```
+
+#### 协程运行
+```lua
+--第一种方式对应
+coroutine.resume(co)
+--第二种方式对应
+co2()
+```
+
+#### 协程的挂起
+```lua
+--协程挂起
+
+fun2 = function()
+
+    local i = 0
+
+    while true do
+
+        print("协程挂起函数执行中"..i)
+
+        i = i + 1
+
+        --协程挂起函数
+
+        coroutine.yield(i)
+
+    end
+
+end
+
+  
+
+co3 = coroutine.create(fun2)
+
+isOK,tempI = coroutine.resume(co3)--启动 0
+
+--默认第一个返回值是协程是否启动成功
+
+--第二个返回值判断有没有成功
+
+print(isOK,tempI)  --true    1
+
+coroutine.resume(co3)--重启，继续执行 1
+
+coroutine.resume(co3) --2
+
+  
+
+co4 = coroutine.wrap(fun2)
+
+--这种方式返回值是协程挂起函数的返回值，没有默认第一个值了
+
+print("返回值"..co4()) --启动 0
+
+print("返回值"..co4())--重启，继续执行 1
+
+print("返回值"..co4())--2
+```
+
+#### 协程状态
+
+- deed 结束
+
+- uspended 挂起(暂停)
+
+- running 运行中
+```lua
+print(coroutine.status(co3)) --suspended
+```
