@@ -1,3 +1,4 @@
+## Lua解析器
 需要引用using XLua
 提供
 - DoString 执行lua1语言
@@ -54,3 +55,5 @@ public class Lesson1_LuaEnv : MonoBehaviour
 
 }
 ```
+
+## 文件加载重定向
