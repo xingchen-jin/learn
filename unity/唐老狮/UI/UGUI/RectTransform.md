@@ -24,3 +24,5 @@
 ## 代码
 代码中通过  
 ``this.transform as RectTransform ``获取  
+通过sizeDelta可以设置大小   
+
