@@ -1,5 +1,3 @@
-# MD5 笔记
-
 ## 一、MD5 码是什么
 
 - **全称**：MD5（Message-Digest Algorithm），即 **MD5 信息摘要算法**。
