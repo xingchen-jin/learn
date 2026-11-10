@@ -1,5 +1,7 @@
 
 
+> ⚠️ 本文记录的是**第一版**实现（`DownLoadCompareFile()` 无参、只有 `_abInfoDic`、`ABInfo` 为私有）。课程第二版把"下载 / 解析 / 本地读取"拆成了独立方法，并加入临时文件 `ABCompareInfo_TMP.txt` 与失败重试，接口变化见《默认资源转存问题》。本文的 `DownLoadFile` 与 FTP 配置部分仍然适用。
+
 ## 一、这个类做什么
 
 `ABUpdateMgr` 负责热更新的第一步：**从 FTP 服务器下载资源对比文件 `ABCompareInfo.txt`，解析出每个远端 AB 包的「名字、大小、MD5」，存入字典**，供后续与本地 AB 包对比、决定哪些需要更新。
